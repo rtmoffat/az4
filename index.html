@@ -1,1 +1,49 @@
-testere
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Team 2 Survey</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./css/styles.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div id="container">
+            <div id="survey">
+                <h2>Team 2 Survey</h2>
+                <p>What do you think of our site?</p>
+                <label for="fname" name="fname">First Name</label>
+                <input id="fname" type="text"/>
+                <label for="lname" name="lname">Last Name</label>
+                <input id="lname" type="text"/><br/>
+                Rating<br/>
+                <label for="one">1</label>
+                <input type="radio" id="one" name="rating" value="1">
+                <label for="two">2</label>
+            <input type="radio" id="two" name="rating" value="2">
+            <label for="three">3</label>
+            <input type="radio" id="three" name="rating" value="3">
+            <label for="four">4</label>
+            <input type="radio" id="four" name="rating" value="4">
+            <label for="five">5</label>
+            <input type="radio" id="five" name="rating" value="5">
+            <br/>
+                <label for="comments" name="comments">Comments</label>
+                <textarea id="comments"></textarea><br/>
+                <button onclick="submit();">Submit</button>
+            </div>
+            <div id="analysis">
+                Analysis<br/>
+            </div>
+        </div>
+        <script src="js/script.js" async defer></script>
+    </body>
+</html>
