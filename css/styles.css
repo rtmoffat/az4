@@ -1,5 +1,5 @@
 body {background-color:rgb(220, 220, 228);color:rgb(26, 27, 32);}
 #container {margin:auto;width:50%;border:1px solid black;}
 #container div {margin:auto;width:50%;text-align:center;margin-bottom:1em;}
-#analysis {height:20em;width:50%;border:1px solid black;}
+#analysis {height:20em;width:50%;border:1px solid black;word-wrap: break-word;}
 textarea {height:20em;width:100%;resize:none;}
