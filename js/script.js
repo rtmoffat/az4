@@ -23,10 +23,11 @@ async function submit() {
             referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
             body: JSON.stringify(data), // body data type must match "Content-Type" header
         })
-            .then((res) => {
-                console.log('fetched')
-                updateAnalysis(res.json())
-        })
+            .then((res) => { res.json() })
+                .then((data) => {
+                    console.log('fetched')
+                    updateAnalysis(data)
+                })
     } catch(err) {
         console.log("fetch failed");
         updateAnalysis(err)
