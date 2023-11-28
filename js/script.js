@@ -9,7 +9,7 @@ async function submit() {
     //data=document.getElementById("comments").value
     document.getElementById("comments").value=""
     try {
-        await fetch('https://prod-71.eastus.logic.azure.com:443/workflows/efe9ec81959d47b68229b4f96e3ec224/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=bmoxfT3ipsvSTXbsJJL-OhzMjKBz-Ft619bhHqoZmWk',
+        const response=await fetch('https://prod-71.eastus.logic.azure.com:443/workflows/efe9ec81959d47b68229b4f96e3ec224/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=bmoxfT3ipsvSTXbsJJL-OhzMjKBz-Ft619bhHqoZmWk',
         {
             method: "POST", // *GET, POST, PUT, DELETE, etc.
             mode: "cors", // no-cors, *cors, same-origin
@@ -23,11 +23,13 @@ async function submit() {
             referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
             body: JSON.stringify(data), // body data type must match "Content-Type" header
         })
-            .then((res) => { res.json() })
-                .then((resData) => {
-                    console.log('fetched')
-                    updateAnalysis(resData)
-                })
+        if (!response.ok) {
+            throw new Error(`HTTP error: ${response.status}`);
+        }
+        const resData=await response.json();
+        console.log('fetched')
+        updateAnalysis(resData)
+            
     } catch(err) {
         console.log("fetch failed");
         updateAnalysis(err)
