@@ -25,7 +25,7 @@ async function submit() {
         })
             .then((res) => {
                 console.log('fetched')
-                updateAnalysis(res.json)
+                updateAnalysis(res.json())
         })
     } catch(err) {
         console.log("fetch failed");
