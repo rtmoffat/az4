@@ -24,19 +24,19 @@ async function submit() {
             body: JSON.stringify(data), // body data type must match "Content-Type" header
         })
             .then((res) => { res.json() })
-                .then((data) => {
+                .then((resData) => {
                     console.log('fetched')
-                    updateAnalysis(data)
+                    updateAnalysis(resData)
                 })
     } catch(err) {
         console.log("fetch failed");
         updateAnalysis(err)
     }
 }
-function updateAnalysis(res) {
+function updateAnalysis(resData) {
     
-    document.getElementById('analysis').innerHTML=Date.now()+" result: "+res
-    document.getElementById('analysis').innerHTML+='<br/>'+JSON.stringify(data)
+    document.getElementById('analysis').innerHTML=Date.now()+" result: "+resData
+    document.getElementById('analysis').innerHTML+='<br/>'+JSON.stringify(resData)
 }
 
 
